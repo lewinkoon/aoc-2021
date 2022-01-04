@@ -19,23 +19,23 @@ func main() {
 func p1(inp []string) int {
 
 	prev := -1
-	c := 0
+	inc := 0
 	for _, s := range inp {
 		n, _ := strconv.Atoi(s)
 		if prev != -1 {
 			if n > prev {
-				c++
+				inc++
 			}
 		}
 		prev = n
 	}
 
-	return c
+	return inc
 }
 
 func p2(inp []string) int {
 	prev := -1
-	c := 0
+	inc := 0
 
 	for i := range inp {
 
@@ -51,7 +51,7 @@ func p2(inp []string) int {
 
 		if prev != -1 {
 			if tot > prev {
-				c++
+				inc++
 			}
 		}
 
@@ -59,5 +59,5 @@ func p2(inp []string) int {
 		prev = tot
 	}
 
-	return c
+	return inc
 }
