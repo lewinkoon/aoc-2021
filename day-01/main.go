@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	data, _ := os.ReadFile("input.txt")
+	data, _ := os.ReadFile("../input.txt")
 
 	slices := strings.Split(string(data), "\n")
 	prev := -1
@@ -23,5 +23,5 @@ func main() {
 		prev = n
 	}
 
-	fmt.Print(c)
+	fmt.Printf("Increments: %d", c)
 }
