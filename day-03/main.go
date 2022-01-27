@@ -70,7 +70,6 @@ func p2(data []string) int64 {
 }
 
 func rating(kind string, input []string) int64 {
-	// fmt.Println(input)
 
 	// declare some varibles
 	cols := len(input[0])
@@ -91,8 +90,8 @@ func rating(kind string, input []string) int64 {
 			tot += bin
 		}
 
+		// choose what digit to keep
 		rows = len(input)
-		// fmt.Println(tot, rows/2)
 		if kind == "ogr" {
 			if tot >= rows-tot {
 				keep = "1"
@@ -107,6 +106,7 @@ func rating(kind string, input []string) int64 {
 			}
 		}
 
+		// remove redundant rows
 		c = 0
 		for _, line := range input {
 			dig = strings.Split(line, "")
@@ -121,8 +121,6 @@ func rating(kind string, input []string) int64 {
 		if len(input) < 2 {
 			break
 		}
-
-		// fmt.Println(input)
 
 	}
 
