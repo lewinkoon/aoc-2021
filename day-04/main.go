@@ -101,6 +101,9 @@ func main() {
 	}
 	n, c := deq() // part1: first win
 	fmt.Printf("Part one: %d\n", n*c.sum())
+
+	n, c = pop() // part2: last win
+	fmt.Printf("Part one: %d\n", n*c.sum())
 }
 
 // stack!! heavy but easy & reliable
@@ -127,4 +130,15 @@ func deq() (int, *card) {
 	deq := stack[0]
 	stack, stack[0] = stack[1:], item{} // remove
 	return deq.n, deq.c
+}
+
+func pop() (int, *card) {
+	if len(stack) == 0 {
+		return 0, nil
+	}
+	i := len(stack) - 1
+
+	pop := stack[i]
+	stack, stack[i] = stack[:i], item{} // remove
+	return pop.n, pop.c
 }
